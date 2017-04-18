@@ -81,6 +81,32 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.gravatar.profile_url">module gravatar.profile_url</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gravatar.profile_url.profile_url">
+            function <span class="apidocSignatureSpan">gravatar.</span>profile_url
+            <span class="apidocSignatureSpan">(email, options, https)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gravatar.url">module gravatar.url</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gravatar.url.url">
+            function <span class="apidocSignatureSpan">gravatar.</span>url
+            <span class="apidocSignatureSpan">(email, options, protocol)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -124,6 +150,88 @@ The gravatar email
 
     <h2>
         <a href="#apidoc.element.gravatar.url" id="apidoc.element.gravatar.url">
+        function <span class="apidocSignatureSpan">gravatar.</span>url
+        <span class="apidocSignatureSpan">(email, options, protocol)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (email, options, protocol) {
+  var baseURL = &#x22;//www.gravatar.com/avatar/&#x22;;
+  if (options &#x26;&#x26; options.protocol) protocol = proto(options);
+  if(typeof protocol !== &#x27;undefined&#x27;) {
+    baseURL = protocol ? &#x22;https://s.gravatar.com/avatar/&#x22; : &#x27;http://www.gravatar.com/avatar/&#x27;;
+  }
+  var query = getQueryString(options);
+  return baseURL + getHash(email) + query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage
+------
+
+```javascript
+var gravatar = require(&#x27;gravatar&#x27;);
+
+gravatar.<span class="apidocCodeKeywordSpan">url</span>(email);
+gravatar.url(email, options);
+gravatar.url(email, options, protocol);
+
+gravatar.profile_url(email);
+gravatar.profile_url(email, options);
+gravatar.profile_url(email, options, protocol);
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gravatar.profile_url" id="apidoc.module.gravatar.profile_url">module gravatar.profile_url</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gravatar.profile_url.profile_url" id="apidoc.element.gravatar.profile_url.profile_url">
+        function <span class="apidocSignatureSpan">gravatar.</span>profile_url
+        <span class="apidocSignatureSpan">(email, options, https)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">profile_url = function (email, options, https) {
+  var format = options != undefined &#x26;&#x26; options.format != undefined ?  String(options.format) : &#x27;json&#x27;
+  if (options &#x26;&#x26; options.protocol) https = proto(options);
+  var baseURL = (https &#x26;&#x26; &#x22;https://secure.gravatar.com/&#x22;) || &#x27;http://www.gravatar.com/&#x27;;
+  var query = getQueryString(options);
+  return baseURL + getHash(email) + &#x27;.&#x27; + format + query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var gravatar = require(&#x27;gravatar&#x27;);
+
+gravatar.url(email);
+gravatar.url(email, options);
+gravatar.url(email, options, protocol);
+
+gravatar.<span class="apidocCodeKeywordSpan">profile_url</span>(email);
+gravatar.profile_url(email, options);
+gravatar.profile_url(email, options, protocol);
+```
+
+## Where:
+* `email`:
+The gravatar email
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gravatar.url" id="apidoc.module.gravatar.url">module gravatar.url</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gravatar.url.url" id="apidoc.element.gravatar.url.url">
         function <span class="apidocSignatureSpan">gravatar.</span>url
         <span class="apidocSignatureSpan">(email, options, protocol)</span>
         </a>
