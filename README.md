@@ -1,9 +1,14 @@
-# api documentation for  [gravatar (v1.6.0)](https://github.com/emerleite/node-gravatar#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gravatar.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gravatar) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gravatar.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gravatar)
+# npmdoc-gravatar
+
+#### api documentation for  [gravatar (v1.6.0)](https://github.com/emerleite/node-gravatar#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gravatar.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gravatar) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gravatar.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gravatar)
+
 #### Gravatar Node.js library
 
-[![NPM](https://nodei.co/npm/gravatar.png?downloads=true)](https://www.npmjs.com/package/gravatar)
+[![NPM](https://nodei.co/npm/gravatar.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gravatar)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gravatar/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-gravatar_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gravatar/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-gravatar/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-gravatar/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gravatar/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gravatar/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gravatar/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Emerson Macedo",
-        "email": "emerleite@gmail.com"
+        "name": "Emerson Macedo"
     },
     "bin": {
         "gravatar": "cli.js"
@@ -57,13 +61,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "emerleite",
-            "email": "emerleite@gmail.com"
+            "name": "emerleite"
         }
     ],
     "name": "gravatar",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/emerleite/node-gravatar.git"
@@ -73,84 +75,6 @@
     },
     "version": "1.6.0"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module gravatar](#apidoc.module.gravatar)
-1.  [function <span class="apidocSignatureSpan">gravatar.</span>profile_url (email, options, https)](#apidoc.element.gravatar.profile_url)
-1.  [function <span class="apidocSignatureSpan">gravatar.</span>url (email, options, protocol)](#apidoc.element.gravatar.url)
-
-
-
-# <a name="apidoc.module.gravatar"></a>[module gravatar](#apidoc.module.gravatar)
-
-#### <a name="apidoc.element.gravatar.profile_url"></a>[function <span class="apidocSignatureSpan">gravatar.</span>profile_url (email, options, https)](#apidoc.element.gravatar.profile_url)
-- description and source-code
-```javascript
-profile_url = function (email, options, https) {
-  var format = options != undefined && options.format != undefined ?  String(options.format) : 'json'
-  if (options && options.protocol) https = proto(options);
-  var baseURL = (https && "https://secure.gravatar.com/") || 'http://www.gravatar.com/';
-  var query = getQueryString(options);
-  return baseURL + getHash(email) + '.' + format + query;
-}
-```
-- example usage
-```shell
-...
-'''javascript
-var gravatar = require('gravatar');
-
-gravatar.url(email);
-gravatar.url(email, options);
-gravatar.url(email, options, protocol);
-
-gravatar.profile_url(email);
-gravatar.profile_url(email, options);
-gravatar.profile_url(email, options, protocol);
-'''
-
-## Where:
-* 'email':
-The gravatar email
-...
-```
-
-#### <a name="apidoc.element.gravatar.url"></a>[function <span class="apidocSignatureSpan">gravatar.</span>url (email, options, protocol)](#apidoc.element.gravatar.url)
-- description and source-code
-```javascript
-url = function (email, options, protocol) {
-  var baseURL = "//www.gravatar.com/avatar/";
-  if (options && options.protocol) protocol = proto(options);
-  if(typeof protocol !== 'undefined') {
-    baseURL = protocol ? "https://s.gravatar.com/avatar/" : 'http://www.gravatar.com/avatar/';
-  }
-  var query = getQueryString(options);
-  return baseURL + getHash(email) + query;
-}
-```
-- example usage
-```shell
-...
-
-Usage
-------
-
-'''javascript
-var gravatar = require('gravatar');
-
-gravatar.url(email);
-gravatar.url(email, options);
-gravatar.url(email, options, protocol);
-
-gravatar.profile_url(email);
-gravatar.profile_url(email, options);
-gravatar.profile_url(email, options, protocol);
-'''
-...
 ```
 
 
