@@ -1,6 +1,6 @@
 # npmdoc-gravatar
 
-#### api documentation for  [gravatar (v1.6.0)](https://github.com/emerleite/node-gravatar#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gravatar.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gravatar) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gravatar.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gravatar)
+#### basic api documentation for  [gravatar (v1.6.0)](https://github.com/emerleite/node-gravatar#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gravatar.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gravatar) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gravatar.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gravatar)
 
 #### Gravatar Node.js library
 
