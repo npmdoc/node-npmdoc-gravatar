@@ -33,7 +33,7 @@
 <tspan x="10" y="490">    │   │ ├── pify@2.3.0 </tspan>
 <tspan x="10" y="506">    │   │ └─┬ strip-bom@2.0.0 </tspan>
 <tspan x="10" y="522">    │   │   └── is-utf8@0.2.1 </tspan>
-<tspan x="10" y="538">    │   ├─┬ normalize-package-data@2.3.6 </tspan>
+<tspan x="10" y="538">    │   ├─┬ normalize-package-data@2.3.8 </tspan>
 <tspan x="10" y="554">    │   │ ├── hosted-git-info@2.4.2 </tspan>
 <tspan x="10" y="570">    │   │ ├─┬ is-builtin-module@1.0.0 </tspan>
 <tspan x="10" y="586">    │   │ │ └── builtin-modules@1.1.1 </tspan>

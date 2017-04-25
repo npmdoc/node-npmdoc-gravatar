@@ -72,27 +72,29 @@
 
         </li>
 
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.gravatar.profile_url">module gravatar.profile_url</a><ol>
-
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.gravatar.profile_url.profile_url">
-            function <span class="apidocSignatureSpan">gravatar.</span>profile_url
-            <span class="apidocSignatureSpan">(email, options, https)</span>
-            </a>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>gravatar</span>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.gravatar.url">module gravatar.url</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.gravatar.gravatar">module gravatar.gravatar</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.gravatar.url.url">
-            function <span class="apidocSignatureSpan">gravatar.</span>url
+            <a class="apidocElementLiA" href="#apidoc.element.gravatar.gravatar.profile_url">
+            function <span class="apidocSignatureSpan">gravatar.gravatar.</span>profile_url
+            <span class="apidocSignatureSpan">(email, options, https)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gravatar.gravatar.url">
+            function <span class="apidocSignatureSpan">gravatar.gravatar.</span>url
             <span class="apidocSignatureSpan">(email, options, protocol)</span>
             </a>
 
@@ -121,21 +123,21 @@
   return baseURL + getHash(email) + '.' + format + query;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-```javascript
-var gravatar = require('gravatar');
+return gravatar.url(email, options) + '\n'
+}
 
-gravatar.url(email);
-gravatar.url(email, options);
-gravatar.url(email, options, protocol);
-
-gravatar.<span class="apidocCodeKeywordSpan">profile_url</span>(email);
-gravatar.profile_url(email, options);
-gravatar.profile_url(email, options, protocol);
-```
-
-## Where:
-* `email`:
-The gravatar email
+var exec = function(argv){
+var options = getOptions(argv);
+if(command === 'profile'){
+  console.log('Gravatar (profile):')
+  return gravatar.<span class="apidocCodeKeywordSpan">profile_url</span>(email, options) + '\n'
+}else if(command === 'avatar' &amp;&amp; emailValidator.validate(email)){
+  return printAvatarUrl(email, options)
+}else if(emailValidator.validate(command)){
+  return printAvatarUrl(command, options)
+}else{
+  yargs.showHelp();
+  return '';
 ...</pre></li>
     </ul>
 
@@ -158,34 +160,36 @@ The gravatar email
   return baseURL + getHash(email) + query;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+  }
+}
+return options;
+};
 
-Usage
-------
+function printAvatarUrl(email, options){
+console.log('Gravatar (avatar):')
+return gravatar.<span class="apidocCodeKeywordSpan">url</span>(email, options) + '\n'
+}
 
-```javascript
-var gravatar = require('gravatar');
-
-gravatar.<span class="apidocCodeKeywordSpan">url</span>(email);
-gravatar.url(email, options);
-gravatar.url(email, options, protocol);
-
-gravatar.profile_url(email);
-gravatar.profile_url(email, options);
-gravatar.profile_url(email, options, protocol);
-```
+var exec = function(argv){
+var options = getOptions(argv);
+if(command === 'profile'){
+  console.log('Gravatar (profile):')
+  return gravatar.profile_url(email, options) + '\n'
 ...</pre></li>
     </ul>
+
+
 
 
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.gravatar.profile_url" id="apidoc.module.gravatar.profile_url">module gravatar.profile_url</a></h1>
+<h1><a href="#apidoc.module.gravatar.gravatar" id="apidoc.module.gravatar.gravatar">module gravatar.gravatar</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.gravatar.profile_url.profile_url" id="apidoc.element.gravatar.profile_url.profile_url">
-        function <span class="apidocSignatureSpan">gravatar.</span>profile_url
+        <a href="#apidoc.element.gravatar.gravatar.profile_url" id="apidoc.element.gravatar.gravatar.profile_url">
+        function <span class="apidocSignatureSpan">gravatar.gravatar.</span>profile_url
         <span class="apidocSignatureSpan">(email, options, https)</span>
         </a>
     </h2>
@@ -198,34 +202,29 @@ gravatar.profile_url(email, options, protocol);
   return baseURL + getHash(email) + '.' + format + query;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-```javascript
-var gravatar = require('gravatar');
+return gravatar.url(email, options) + '\n'
+}
 
-gravatar.url(email);
-gravatar.url(email, options);
-gravatar.url(email, options, protocol);
-
-gravatar.<span class="apidocCodeKeywordSpan">profile_url</span>(email);
-gravatar.profile_url(email, options);
-gravatar.profile_url(email, options, protocol);
-```
-
-## Where:
-* `email`:
-The gravatar email
+var exec = function(argv){
+var options = getOptions(argv);
+if(command === 'profile'){
+  console.log('Gravatar (profile):')
+  return gravatar.<span class="apidocCodeKeywordSpan">profile_url</span>(email, options) + '\n'
+}else if(command === 'avatar' &amp;&amp; emailValidator.validate(email)){
+  return printAvatarUrl(email, options)
+}else if(emailValidator.validate(command)){
+  return printAvatarUrl(command, options)
+}else{
+  yargs.showHelp();
+  return '';
 ...</pre></li>
     </ul>
 
 
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.gravatar.url" id="apidoc.module.gravatar.url">module gravatar.url</a></h1>
-
 
     <h2>
-        <a href="#apidoc.element.gravatar.url.url" id="apidoc.element.gravatar.url.url">
-        function <span class="apidocSignatureSpan">gravatar.</span>url
+        <a href="#apidoc.element.gravatar.gravatar.url" id="apidoc.element.gravatar.gravatar.url">
+        function <span class="apidocSignatureSpan">gravatar.gravatar.</span>url
         <span class="apidocSignatureSpan">(email, options, protocol)</span>
         </a>
     </h2>
@@ -240,21 +239,21 @@ The gravatar email
   return baseURL + getHash(email) + query;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+  }
+}
+return options;
+};
 
-Usage
-------
+function printAvatarUrl(email, options){
+console.log('Gravatar (avatar):')
+return gravatar.<span class="apidocCodeKeywordSpan">url</span>(email, options) + '\n'
+}
 
-```javascript
-var gravatar = require('gravatar');
-
-gravatar.<span class="apidocCodeKeywordSpan">url</span>(email);
-gravatar.url(email, options);
-gravatar.url(email, options, protocol);
-
-gravatar.profile_url(email);
-gravatar.profile_url(email, options);
-gravatar.profile_url(email, options, protocol);
-```
+var exec = function(argv){
+var options = getOptions(argv);
+if(command === 'profile'){
+  console.log('Gravatar (profile):')
+  return gravatar.profile_url(email, options) + '\n'
 ...</pre></li>
     </ul>
 
